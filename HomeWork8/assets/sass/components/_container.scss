@@ -1,0 +1,52 @@
+@use "../utils/mixins" as m;
+
+.container {
+  &-list {
+    list-style: none;
+    display: flex;
+    height: 192px;
+    width: 1280px;
+    gap: 1%;
+    transform: translate(10%);
+    &-box {
+      margin-top: 4.4%;
+      height: 30%;
+      width: 20%;
+
+      &:nth-child(2) {
+        height: 60%;
+        margin-top: 0%;
+      }
+      &:nth-child(3) {
+        height: 60%;
+      }
+      & button {
+        color: white;
+        background: blue;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  @media screen and (max-width: 420px) {
+    &-list {
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-template-rows: auto auto;
+      grid: 3px !important;
+      height: 75px;
+      width: 75px;
+      &-box {
+        height: 100% !important;
+        width: 100% !important;
+        margin: auto;
+
+        & button {
+          width: 75px;
+          height: 75px;
+        }
+      }
+    }
+  }
+}
